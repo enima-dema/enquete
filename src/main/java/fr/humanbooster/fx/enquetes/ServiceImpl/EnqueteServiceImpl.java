@@ -64,6 +64,11 @@ public class EnqueteServiceImpl implements EnqueteService {
 		enquete.setPrix (prix);
 		enquete.setDate (date);
 		
+		if (!ajoutEnquete(enquete))
+		{
+			System.out.println("erreur enregistrement enquete from EnqueteServiceImpl.createEnquete()");
+		}
+		
 		return enquete;
 	}
 
