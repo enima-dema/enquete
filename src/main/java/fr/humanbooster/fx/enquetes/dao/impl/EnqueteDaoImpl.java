@@ -1,5 +1,6 @@
 package fr.humanbooster.fx.enquetes.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -45,7 +46,16 @@ public class EnqueteDaoImpl implements EnqueteDao{
     public Enquete findById(int idEnquete) {       
         return session.byId(Enquete.class).load(idEnquete);
     }
+    
+    @Override
+    public List<Enquete> findByName(String name){
+    	return session.createQuery("From Enquete where nom like :name").setParameter("name","%"+name+"%").getResultList();    }
 
+    @Override
+    public List<Enquete> findByDate(Date dateDebut,Date dateFin){
+    	return session.createQuery("From Enquete where date between :dateDebut and :dateFin").setParameter("dateDebut", dateDebut).setParameter("dateFin",dateFin).getResultList();
+    }
+    
     @SuppressWarnings("unchecked")
 	@Override
 
