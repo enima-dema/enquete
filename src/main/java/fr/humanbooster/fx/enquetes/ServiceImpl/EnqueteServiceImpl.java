@@ -9,6 +9,7 @@ import fr.humanbooster.fx.enquetes.business.Enquete;
 import fr.humanbooster.fx.enquetes.business.EnqueteInt;
 import fr.humanbooster.fx.enquetes.business.EnqueteTel;
 import fr.humanbooster.fx.enquetes.business.Question;
+import fr.humanbooster.fx.enquetes.business.SiteInt;
 import fr.humanbooster.fx.enquetes.dao.EnqueteDao;
 import fr.humanbooster.fx.enquetes.dao.impl.EnqueteDaoImpl;
 
@@ -29,8 +30,8 @@ public class EnqueteServiceImpl implements EnqueteService {
 
 	@Override
 	public List<Enquete> recupereEnquetes(String nom, Date dateDebut, Date dateFin) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("non fonctionnel pour le moment");
+		return recupereEnquetes();
 	}
 
 	@Override
@@ -47,31 +48,39 @@ public class EnqueteServiceImpl implements EnqueteService {
 	}
 
 	@Override
-	public Enquete createEnquete(String nom, float prix, Date date, boolean isTelephonique) {
-		
-		Enquete enquete;
-		
-		if (isTelephonique)
-		{
-			enquete = new EnqueteTel();
-		}
-		else
-		{
-			enquete = new EnqueteInt();
-		}
-		
-		enquete.setNom (nom);
-		enquete.setPrix (prix);
-		enquete.setDate (date);
+	public boolean createEnquete(String nom, float prix, Date date, String accroche) {
+		EnqueteTel enquete = new EnqueteTel();
+		enquete.setNom(nom);
+		enquete.setPrix(prix);
+		enquete.setDate(date);
+		enquete.setAccroche(accroche);
 		
 		if (!ajoutEnquete(enquete))
 		{
 			System.out.println("erreur enregistrement enquete from EnqueteServiceImpl.createEnquete()");
+			return false;
 		}
 		
-		return enquete;
+		return true;
 	}
 
+	@Override
+	public boolean createEnquete(String nom, float prix, Date date, List<SiteInt> sites) {
+		EnqueteInt enquete = new EnqueteInt();
+		enquete.setNom(nom);
+		enquete.setPrix(prix);
+		enquete.setDate(date);
+		enquete.setSites(sites);
+		
+		if (!ajoutEnquete(enquete))
+		{
+			System.out.println("erreur enregistrement enquete from EnqueteServiceImpl.createEnquete()");
+			return false;
+		}
+		
+		return true;
+	}
+	
 	@Override
 	public boolean ajoutEnqueteType(boolean telephonique, Enquete enquete) {
 		
@@ -150,5 +159,4 @@ public class EnqueteServiceImpl implements EnqueteService {
 		
 		return result;
 	}
-
 }
