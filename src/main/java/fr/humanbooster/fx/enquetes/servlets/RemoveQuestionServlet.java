@@ -1,5 +1,7 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
+import fr.humanbooster.fx.enquetes.Service.QuestionService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,14 +15,13 @@ import java.io.IOException;
 @WebServlet(name = "RemoveEnquete")
 public class RemoveQuestionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        QuestionService qs = null; //new QuestionServiceImpl();
+        int id = Integer.parseInt(request.getParameter("idQuestion"));
+        qs.suprQuestion(id);
+        
     }
 
     //recupère toutes les enquêtes et les fait apparaitre
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*EnqueteService es = new EnqueteServiceImpl();
-        List<Enquete> enquetes = es.getAllEnquete();
-        request.setParameter("enquetes", enquetes)*/
-        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

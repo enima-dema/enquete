@@ -13,7 +13,7 @@
 	<c:forEach var="enquete" items="${enquetes}">
 		<h2>${enquete.nom}</h2>
 		<div>Plannifi&eacute;e le: ${enquete.dateEnqueteString}</div>
-		<c:forEach var="question" items="${questions}">
+		<c:forEach var="question" items="${enquete.questions}">
 			${question.nom}
 			<form action="RemoveQuestion?idQuestion=${question.id}" method="POST">
 				<input type="submit" value="Ajouter une question à l'enquête"/>
