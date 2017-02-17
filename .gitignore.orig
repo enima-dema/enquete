@@ -1,9 +1,11 @@
 /target/
-<<<<<<< HEAD
 /bin/
 /classpath
 /gitignore
 /project
 /settings
+<<<<<<< HEAD
+*.class
 =======
->>>>>>> c784c14b23bb24d601b37e1cfce20cf2d9e1faa9
+/*.class
+>>>>>>> 8dc11a91cfe6279dc4a517f1780a4c9f73faef5d

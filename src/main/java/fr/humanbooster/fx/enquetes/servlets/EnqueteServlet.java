@@ -22,7 +22,7 @@ public class EnqueteServlet extends HttpServlet {
 
     //recupère toutes les enquêtes et les fait apparaitre
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EnqueteService es = new EnqueteService();
+        EnqueteService es = null;//new EnqueteServiceImpl();
         List<Enquete> enquetes = es.recupereEnquetes();
         request.setAttribute("enquetes", enquetes);
         request.getRequestDispatcher("index.jsp").forward(request, response);
