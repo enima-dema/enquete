@@ -11,11 +11,14 @@ import fr.humanbooster.fx.enquetes.business.EnqueteTel;
 import fr.humanbooster.fx.enquetes.business.Question;
 import fr.humanbooster.fx.enquetes.business.SiteInt;
 import fr.humanbooster.fx.enquetes.dao.EnqueteDao;
+import fr.humanbooster.fx.enquetes.dao.QuestionDao;
 import fr.humanbooster.fx.enquetes.dao.impl.EnqueteDaoImpl;
+import fr.humanbooster.fx.enquetes.dao.impl.QuestionDaoImpl;
 
 public class EnqueteServiceImpl implements EnqueteService {
 
 	private EnqueteDao ed = new EnqueteDaoImpl();
+	private QuestionDao qd = new QuestionDaoImpl();
 	
 	@Override
 	public List<Enquete> recupereEnquetes() {
@@ -82,9 +85,10 @@ public class EnqueteServiceImpl implements EnqueteService {
 	}
 	
 	@Override
-	public boolean ajoutEnqueteType(boolean telephonique, Enquete enquete) {
+	public boolean ajoutEnqueteType(boolean telephonique, int idEnquete) {
 		
 		Enquete newEnquete;
+		Enquete enquete = ed.findById(idEnquete);
 		
 		if (telephonique)
 		{
@@ -132,11 +136,12 @@ public class EnqueteServiceImpl implements EnqueteService {
 	}
 
 	@Override
-	public boolean ajoutQuestionAEnquete(int idEnquete, Question question) {
+	public boolean ajoutQuestionAEnquete(int idEnquete, int idQuestion) {
 		
 		Enquete enquete = ed.findById(idEnquete);
+		
 		List<Question> listQuestion = enquete.getQuestions();
-		listQuestion.add(question);
+		listQuestion.add(qd.findById(idQuestion));
 		enquete.setQuestions(listQuestion);
 		
 		ed.openCurrentSession();

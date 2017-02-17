@@ -5,12 +5,15 @@ import java.util.List;
 import fr.humanbooster.fx.enquetes.Service.QuestionService;
 import fr.humanbooster.fx.enquetes.business.Enquete;
 import fr.humanbooster.fx.enquetes.business.Question;
+import fr.humanbooster.fx.enquetes.dao.EnqueteDao;
 import fr.humanbooster.fx.enquetes.dao.QuestionDao;
+import fr.humanbooster.fx.enquetes.dao.impl.EnqueteDaoImpl;
 import fr.humanbooster.fx.enquetes.dao.impl.QuestionDaoImpl;
 
 public class QuestionServiceImpl implements QuestionService {
 
 	QuestionDao qd = new QuestionDaoImpl();
+	EnqueteDao ed = new EnqueteDaoImpl();
 	
 	@Override
 	public List<Question> recupereQuestions() {
@@ -42,7 +45,8 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public boolean creerQuestion(String nom, Enquete enquete) {
+	public boolean creerQuestion(String nom, int idEnquete) {
+		Enquete enquete = ed.findById(idEnquete);
 		Question question = new Question();
 		question.setNom(nom);
 		question.setEnquete(enquete);

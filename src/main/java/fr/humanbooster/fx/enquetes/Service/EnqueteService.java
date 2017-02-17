@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import fr.humanbooster.fx.enquetes.business.Enquete;
-import fr.humanbooster.fx.enquetes.business.Question;
 import fr.humanbooster.fx.enquetes.business.SiteInt;
 
 public interface EnqueteService {
@@ -19,11 +18,11 @@ public interface EnqueteService {
 	
 	public boolean ajoutEnquete(Enquete enquete);
 		
-	public boolean ajoutEnqueteType (boolean telephonique, Enquete enquete);
+	public boolean ajoutEnqueteType (boolean telephonique, int idEnquete);
 	
 	public boolean modifierEnquete(int idEnquete, Enquete enquete);
 	
-	public boolean ajoutQuestionAEnquete(int idEnquete, Question question);
+	public boolean ajoutQuestionAEnquete(int idEnquete, int idQuestion);
 	
 	public boolean suprEnquete(int idEnquete);
 	
