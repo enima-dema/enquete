@@ -46,7 +46,8 @@ public class EnqueteDaoImpl implements EnqueteDao{
         return session.byId(Enquete.class).load(idEnquete);
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
 
     public List<Enquete> findAll() {
         return session.createQuery("from Enquete").getResultList();

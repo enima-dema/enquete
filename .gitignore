@@ -4,4 +4,4 @@
 /gitignore
 /project
 /settings
-*.class
+/*.class
