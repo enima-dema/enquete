@@ -15,15 +15,15 @@
 		<div>Plannifi&eacute;e le: ${enquete.dateEnqueteString}</div>
 		<c:forEach var="question" items="${questions}">
 			${question.nom}
-			<form action="RemoveQuestion" method="POST">
+			<form action="RemoveQuestion?idQuestion=${question.id}" method="POST">
 				<input type="submit" value="Ajouter une question à l'enquête"/>
 			</form>
 		</c:forEach>
-		<form action="AddQuestion" method="POST">
+		<form action="AddQuestion?idEnquete=${enquete.id}" method="POST">
 			<input type="submit" value="Ajouter une question à l'enquête"/>
 		</form>
 		<br>
-		<form action="RemoveEnquete" method="POST">
+		<form action="RemoveEnquete?idEnquete=${enquete.id}" method="POST">
 			<input type="submit" value="Supprimer enquête"/>
 		</form>
 	</c:forEach>
