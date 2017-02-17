@@ -1,9 +1,15 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
+import fr.humanbooster.fx.enquetes.Service.DepartementService;
 import fr.humanbooster.fx.enquetes.Service.EnqueteService;
+import fr.humanbooster.fx.enquetes.Service.FaitService;
 import fr.humanbooster.fx.enquetes.Service.SiteIntService;
+import fr.humanbooster.fx.enquetes.ServiceImpl.DepartementImpl;
 import fr.humanbooster.fx.enquetes.ServiceImpl.EnqueteServiceImpl;
+import fr.humanbooster.fx.enquetes.ServiceImpl.FaitServiceImpl;
 import fr.humanbooster.fx.enquetes.ServiceImpl.SiteIntServiceImpl;
+import fr.humanbooster.fx.enquetes.business.Departement;
+import fr.humanbooster.fx.enquetes.business.Fait;
 import fr.humanbooster.fx.enquetes.business.SiteInt;
 
 import javax.servlet.ServletException;
@@ -41,12 +47,21 @@ public class AddEnqueteIntServlet extends HttpServlet {
                 Float.parseFloat(request.getParameter("prix")),
                 date,
                 sites);
+        response.sendRedirect("index.jsp");
     }
 
     //recupère toutes les enquêtes et les fait apparaitre
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EnqueteService es = new EnqueteServiceImpl();
-        es.recupereEnquetes();
-        response.sendRedirect("addint.jsp");
+        SiteIntService ss = new SiteIntServiceImpl();
+        FaitService fs = new FaitServiceImpl();
+        DepartementService ds = new DepartementImpl();
+        List<Fait> faits =  fs.recupereFait();
+        List<Departement> departements = ds.recupereDepartement();
+        List<SiteInt> sites = ss.recupereSiteInt();
+
+        request.setAttribute("faits", faits);
+        request.setAttribute("sites", sites);
+        request.setAttribute("departements", departements);
+        request.getRequestDispatcher("addint.jsp").forward(request,response);
     }
 }
