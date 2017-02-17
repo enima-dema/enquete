@@ -29,8 +29,11 @@
 	</c:forEach>
 	<br>
 	<br>
-	<form action="AddEnqueteServlet" method="GET">
-		<input type="submit" value="Ajouter enquête"/>
+	<form action="AddEnqueteInt" method="GET">
+		<input type="submit" value="Ajouter enquête INTERNET"/>
+	</form>
+	<form action="AddEnqueteTel" method="GET">
+		<input type="submit" value="Ajouter enquête TELEPHONIQUE"/>
 	</form>
 	<br>
 	<p>Nombre total d'enquete(s): ${enquetes.size()}</p>

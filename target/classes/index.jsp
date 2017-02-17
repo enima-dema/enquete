@@ -13,7 +13,7 @@
 	<c:forEach var="enquete" items="${enquetes}">
 		<h2>${enquete.nom}</h2>
 		<div>Plannifi&eacute;e le: ${enquete.dateEnqueteString}</div>
-		<c:forEach var="question" items="${questions}">
+		<c:forEach var="question" items="${enquete.questions}">
 			${question.nom}
 			<form action="RemoveQuestion?idQuestion=${question.id}" method="POST">
 				<input type="submit" value="Ajouter une question à l'enquête"/>
@@ -29,8 +29,11 @@
 	</c:forEach>
 	<br>
 	<br>
-	<form action="AddEnqueteServlet" method="GET">
-		<input type="submit" value="Ajouter enquête"/>
+	<form action="AddEnqueteInt" method="GET">
+		<input type="submit" value="Ajouter enquête INTERNET"/>
+	</form>
+	<form action="AddEnqueteTel" method="GET">
+		<input type="submit" value="Ajouter enquête TELEPHONIQUE"/>
 	</form>
 	<br>
 	<p>Nombre total d'enquete(s): ${enquetes.size()}</p>
