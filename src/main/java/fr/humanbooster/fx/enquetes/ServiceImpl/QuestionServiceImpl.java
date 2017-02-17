@@ -3,6 +3,7 @@ package fr.humanbooster.fx.enquetes.ServiceImpl;
 import java.util.List;
 
 import fr.humanbooster.fx.enquetes.Service.QuestionService;
+import fr.humanbooster.fx.enquetes.business.Enquete;
 import fr.humanbooster.fx.enquetes.business.Question;
 import fr.humanbooster.fx.enquetes.dao.QuestionDao;
 import fr.humanbooster.fx.enquetes.dao.impl.QuestionDaoImpl;
@@ -38,6 +39,35 @@ public class QuestionServiceImpl implements QuestionService {
 		boolean result = qd.delete(idQuestion);
 		qd.closeCurrentSession();
 		return result;
+	}
+
+	@Override
+	public boolean creerQuestion(String nom, Enquete enquete) {
+		Question question = new Question();
+		question.setNom(nom);
+		question.setEnquete(enquete);
+		
+		return creerQuestion(question);
+	}
+
+	@Override
+	public boolean creerQuestion(String nom) {
+		Question question = new Question();
+		question.setNom(nom);
+		
+		return creerQuestion(question);
+	}
+
+	@Override
+	public boolean creerQuestion(Question question) {
+		qd.openCurrentSession();
+		Question questionFromDao = qd.create(question);
+		qd.closeCurrentSession();
+		if (questionFromDao != null)
+		{
+			return true;
+		}
+		return false;
 	}
 
 }
