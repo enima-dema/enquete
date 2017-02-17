@@ -17,4 +17,6 @@ public class Critere {
     Fait fait;
     @ManyToOne
     Enquete enquete;
+
+
 }
