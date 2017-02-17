@@ -14,4 +14,31 @@ public class Fait {
     String nom;
     @OneToMany(mappedBy = "fait")
     List<Critere> criteres;
+
+    public Fait() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public List<Critere> getCriteres() {
+        return criteres;
+    }
+
+    public void setCriteres(List<Critere> criteres) {
+        this.criteres = criteres;
+    }
 }

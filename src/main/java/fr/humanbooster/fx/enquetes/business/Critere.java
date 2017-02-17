@@ -18,5 +18,57 @@ public class Critere {
     @ManyToOne
     Enquete enquete;
 
+    public Critere() {
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getQuotat() {
+        return quotat;
+    }
+
+    public void setQuotat(int quotat) {
+        this.quotat = quotat;
+    }
+
+    public Departement getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(Departement departement) {
+        this.departement = departement;
+    }
+
+    public Fait getFait() {
+        return fait;
+    }
+
+    public void setFait(Fait fait) {
+        this.fait = fait;
+    }
+
+    public Enquete getEnquete() {
+        return enquete;
+    }
+
+    public void setEnquete(Enquete enquete) {
+        this.enquete = enquete;
+    }
+
+    @Override
+    public String toString() {
+        return "Critere{" +
+                "id=" + id +
+                ", quotat=" + quotat +
+                ", departement=" + departement +
+                ", fait=" + fait +
+                ", enquete=" + enquete +
+                '}';
+    }
 }

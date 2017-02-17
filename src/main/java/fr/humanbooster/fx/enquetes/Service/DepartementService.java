@@ -1,8 +1,8 @@
 package fr.humanbooster.fx.enquetes.Service;
 
-import java.util.List;
-
 import fr.humanbooster.fx.enquetes.business.Departement;
+
+import java.util.List;
 
 public interface DepartementService {
 

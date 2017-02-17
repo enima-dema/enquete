@@ -8,4 +8,15 @@ import javax.persistence.Entity;
 @Entity
 public class EnqueteTel extends Enquete {
     String accroche;
+
+    public EnqueteTel() {
+    }
+
+    public String getAccroche() {
+        return accroche;
+    }
+
+    public void setAccroche(String accroche) {
+        this.accroche = accroche;
+    }
 }

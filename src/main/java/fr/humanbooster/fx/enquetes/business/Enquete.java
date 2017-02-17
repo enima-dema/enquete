@@ -21,4 +21,54 @@ public abstract class Enquete {
     @OneToMany(mappedBy="enquete")
     List<Critere> criteres;
 
+    public Enquete() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public List<Critere> getCriteres() {
+        return criteres;
+    }
+
+    public void setCriteres(List<Critere> criteres) {
+        this.criteres = criteres;
+    }
 }

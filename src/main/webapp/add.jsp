@@ -15,8 +15,8 @@
 		<input type="date" name="date" placeholder="Date de l'enquête">
 		<input type="number" name="quotat" placeholder="Quotat">
 		<c:forEach items="${sites}" var="s">
-			<OPTION value="${s.name}">
-					${v.name}
+			<OPTION value="${s.id}">
+					${s.name}
 			</OPTION>
 		</c:forEach>
 		<c:forEach items="${sites}" var="s">

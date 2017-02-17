@@ -10,4 +10,15 @@ import java.util.List;
 public class EnqueteInt extends Enquete {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     List<SiteInt> sites;
+
+    public EnqueteInt() {
+    }
+
+    public List<SiteInt> getSites() {
+        return sites;
+    }
+
+    public void setSites(List<SiteInt> sites) {
+        this.sites = sites;
+    }
 }
