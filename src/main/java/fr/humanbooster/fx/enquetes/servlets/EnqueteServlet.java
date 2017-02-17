@@ -1,6 +1,7 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
 import fr.humanbooster.fx.enquetes.Service.EnqueteService;
+import fr.humanbooster.fx.enquetes.ServiceImpl.EnqueteServiceImpl;
 import fr.humanbooster.fx.enquetes.business.Enquete;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,7 @@ public class EnqueteServlet extends HttpServlet {
 
     //recupère toutes les enquêtes et les fait apparaitre
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EnqueteService es = new EnqueteService();
+        EnqueteService es = new EnqueteServiceImpl();
         List<Enquete> enquetes = es.recupereEnquetes();
         request.setAttribute("enquetes", enquetes);
         request.getRequestDispatcher("index.jsp").forward(request, response);

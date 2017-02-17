@@ -10,11 +10,11 @@ public interface EnqueteService {
 
 	public List<Enquete> recupereEnquetes();
 	
-	public List<Enquete> recupereEnquetes(String nom, Date dateDebut, Date deateFin);
+	public List<Enquete> recupereEnquetes(String nom, Date dateDebut, Date dateFin);
 	
 	public boolean ajoutEnquete(Enquete enquete);
 	
-	public Enquete createEnquete(String nom, float prix, Date date);
+	public Enquete createEnquete(String nom, float prix, Date date, boolean isTelephonique);
 	
 	public boolean ajoutEnqueteType (boolean telephonique, Enquete enquete);
 	
