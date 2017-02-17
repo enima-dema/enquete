@@ -1,6 +1,7 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
 import fr.humanbooster.fx.enquetes.Service.EnqueteService;
+import fr.humanbooster.fx.enquetes.ServiceImpl.EnqueteServiceImpl;
 import fr.humanbooster.fx.enquetes.business.Enquete;
 
 import javax.servlet.ServletException;
