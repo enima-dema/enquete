@@ -1,4 +1,4 @@
-package fr.humanbooster.fx.enquetes.Service;
+package fr.humanbooster.fx.enquetes.service;
 
 import java.util.Date;
 import java.util.List;

@@ -1,12 +1,12 @@
-package fr.humanbooster.fx.enquetes.ServiceImpl;
+package fr.humanbooster.fx.enquetes.service.impl;
 
 import java.util.List;
 
-import fr.humanbooster.fx.enquetes.Service.QuestionService;
 import fr.humanbooster.fx.enquetes.business.Enquete;
 import fr.humanbooster.fx.enquetes.business.Question;
 import fr.humanbooster.fx.enquetes.dao.QuestionDao;
 import fr.humanbooster.fx.enquetes.dao.impl.QuestionDaoImpl;
+import fr.humanbooster.fx.enquetes.service.QuestionService;
 
 public class QuestionServiceImpl implements QuestionService {
 

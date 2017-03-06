@@ -1,5 +1,13 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
+<<<<<<< HEAD
+import fr.humanbooster.fx.enquetes.service.*;
+import fr.humanbooster.fx.enquetes.ServiceImpl.DepartementImpl;
+import fr.humanbooster.fx.enquetes.ServiceImpl.EnqueteServiceImpl;
+import fr.humanbooster.fx.enquetes.ServiceImpl.FaitServiceImpl;
+import fr.humanbooster.fx.enquetes.ServiceImpl.SiteIntServiceImpl;
+=======
+>>>>>>> 2b51ccb94f4519aabf5c72e413ff8eea4446e043
 import fr.humanbooster.fx.enquetes.business.Departement;
 import fr.humanbooster.fx.enquetes.business.Fait;
 import fr.humanbooster.fx.enquetes.business.SiteInt;

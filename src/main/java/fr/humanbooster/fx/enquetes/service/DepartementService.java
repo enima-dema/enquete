@@ -1,4 +1,4 @@
-package fr.humanbooster.fx.enquetes.Service;
+package fr.humanbooster.fx.enquetes.service;
 
 import fr.humanbooster.fx.enquetes.business.Departement;
 

@@ -1,10 +1,9 @@
-package fr.humanbooster.fx.enquetes.ServiceImpl;
+package fr.humanbooster.fx.enquetes.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import fr.humanbooster.fx.enquetes.Service.EnqueteService;
 import fr.humanbooster.fx.enquetes.business.Enquete;
 import fr.humanbooster.fx.enquetes.business.EnqueteInt;
 import fr.humanbooster.fx.enquetes.business.EnqueteTel;
@@ -12,6 +11,7 @@ import fr.humanbooster.fx.enquetes.business.Question;
 import fr.humanbooster.fx.enquetes.business.SiteInt;
 import fr.humanbooster.fx.enquetes.dao.EnqueteDao;
 import fr.humanbooster.fx.enquetes.dao.impl.EnqueteDaoImpl;
+import fr.humanbooster.fx.enquetes.service.EnqueteService;
 
 public class EnqueteServiceImpl implements EnqueteService {
 
@@ -40,6 +40,8 @@ public class EnqueteServiceImpl implements EnqueteService {
 		
 		ed.openCurrentSession();
 		enqueteResponse = ed.create(enquete);
+		ed.closeCurrentSession();
+
 		if (enqueteResponse != null)
 		{
 			return true;
