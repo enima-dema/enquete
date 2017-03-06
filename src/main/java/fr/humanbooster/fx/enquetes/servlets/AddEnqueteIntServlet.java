@@ -1,9 +1,6 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
-import fr.humanbooster.fx.enquetes.Service.DepartementService;
-import fr.humanbooster.fx.enquetes.Service.EnqueteService;
-import fr.humanbooster.fx.enquetes.Service.FaitService;
-import fr.humanbooster.fx.enquetes.Service.SiteIntService;
+import fr.humanbooster.fx.enquetes.service.*;
 import fr.humanbooster.fx.enquetes.ServiceImpl.DepartementImpl;
 import fr.humanbooster.fx.enquetes.ServiceImpl.EnqueteServiceImpl;
 import fr.humanbooster.fx.enquetes.ServiceImpl.FaitServiceImpl;
