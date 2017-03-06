@@ -1,11 +1,11 @@
-package fr.humanbooster.fx.enquetes.ServiceImpl;
+package fr.humanbooster.fx.enquetes.service.impl;
 
 import java.util.List;
 
-import fr.humanbooster.fx.enquetes.Service.SiteIntService;
 import fr.humanbooster.fx.enquetes.business.SiteInt;
 import fr.humanbooster.fx.enquetes.dao.SiteIntDao;
 import fr.humanbooster.fx.enquetes.dao.impl.SiteIntDaoImpl;
+import fr.humanbooster.fx.enquetes.service.SiteIntService;
 
 public class SiteIntServiceImpl implements SiteIntService {
 

@@ -1,11 +1,11 @@
-package fr.humanbooster.fx.enquetes.ServiceImpl;
+package fr.humanbooster.fx.enquetes.service.impl;
 
 import java.util.List;
 
-import fr.humanbooster.fx.enquetes.Service.FaitService;
 import fr.humanbooster.fx.enquetes.business.Fait;
 import fr.humanbooster.fx.enquetes.dao.FaitDao;
 import fr.humanbooster.fx.enquetes.dao.impl.FaitDaoImpl;
+import fr.humanbooster.fx.enquetes.service.FaitService;
 
 public class FaitServiceImpl implements FaitService {
 

@@ -1,16 +1,16 @@
 package fr.humanbooster.fx.enquetes.servlets;
 
-import fr.humanbooster.fx.enquetes.Service.DepartementService;
-import fr.humanbooster.fx.enquetes.Service.EnqueteService;
-import fr.humanbooster.fx.enquetes.Service.FaitService;
-import fr.humanbooster.fx.enquetes.Service.SiteIntService;
-import fr.humanbooster.fx.enquetes.ServiceImpl.DepartementImpl;
-import fr.humanbooster.fx.enquetes.ServiceImpl.EnqueteServiceImpl;
-import fr.humanbooster.fx.enquetes.ServiceImpl.FaitServiceImpl;
-import fr.humanbooster.fx.enquetes.ServiceImpl.SiteIntServiceImpl;
 import fr.humanbooster.fx.enquetes.business.Departement;
 import fr.humanbooster.fx.enquetes.business.Fait;
 import fr.humanbooster.fx.enquetes.business.SiteInt;
+import fr.humanbooster.fx.enquetes.service.DepartementService;
+import fr.humanbooster.fx.enquetes.service.EnqueteService;
+import fr.humanbooster.fx.enquetes.service.FaitService;
+import fr.humanbooster.fx.enquetes.service.SiteIntService;
+import fr.humanbooster.fx.enquetes.service.impl.DepartementImpl;
+import fr.humanbooster.fx.enquetes.service.impl.EnqueteServiceImpl;
+import fr.humanbooster.fx.enquetes.service.impl.FaitServiceImpl;
+import fr.humanbooster.fx.enquetes.service.impl.SiteIntServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

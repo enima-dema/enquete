@@ -1,11 +1,11 @@
-package fr.humanbooster.fx.enquetes.ServiceImpl;
+package fr.humanbooster.fx.enquetes.service.impl;
 
 import java.util.List;
 
-import fr.humanbooster.fx.enquetes.Service.DepartementService;
 import fr.humanbooster.fx.enquetes.business.Departement;
 import fr.humanbooster.fx.enquetes.dao.DepartementDao;
 import fr.humanbooster.fx.enquetes.dao.impl.DepartementDaoImpl;
+import fr.humanbooster.fx.enquetes.service.DepartementService;
 
 public class DepartementImpl implements DepartementService {
 
